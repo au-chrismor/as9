@@ -52,7 +52,7 @@ void warn(char *str)
  *      as valid label characters.
  *      Blank and the comment sign are delimiters.
  */
-void delim(char c)
+int delim(char c)
 {
         if( any(c," :;\t\n") || EOS==c )
                 return(YES);
