@@ -3,6 +3,7 @@
 SRCH=   \
 as.h    \
 table9.h \
+asdefs.h \
 #
 
 SRCC=   \
