@@ -1,4 +1,6 @@
 #include "asdefs.h"
+#include <fcntl.h>
+#include <unistd.h>
 /*
  *      file I/O version of forward ref handler
  */

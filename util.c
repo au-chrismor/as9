@@ -1,5 +1,5 @@
-#include "as9defs.h"
-
+#include "asdefs.h"
+#include <stdlib.h>
 /*
  *      fatal --- fatal error handler
  */
@@ -72,7 +72,7 @@ char *skip_white(char *ptr)
 /*
  *      eword --- emit a word to code file
  */
-eword(int wd)
+void eword(int wd)
 {
         emit(hibyte(wd));
         emit(lobyte(wd));
@@ -81,7 +81,7 @@ eword(int wd)
 /*
  *      emit --- emit a byte to code file
  */
-void emit(char byte)
+int emit(char byte)
 {
 #ifdef DEBUG
         printf("%2x @ %4x\n",byte,Pc);
@@ -152,7 +152,6 @@ void hexout(int byte)
 }
 
 void binout(int byte)
-int     byte;
 {
         fprintf(Binfil,"%c",byte);
 }
@@ -199,7 +198,7 @@ void print_line(void)
 /*
  *      any --- does str contain c?
  */
-void any(char c,char *str)
+int any(char c,char *str)
 {
         while(*str != EOS)
                 if(*str++ == c)
@@ -277,7 +276,5 @@ char white(char c)
  */
 char *alloc(int nbytes)
 {
-        char *malloc();
-
         return(malloc(nbytes));
 }
