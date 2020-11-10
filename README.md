@@ -1,6 +1,6 @@
 AS9 - Motorola 6809 Assembler
 
-I am a newcomer to the 6809 Processor (40 years, be hey, who's counting?), and I am given to understand this is the original Motorola Assembler which was originally written for use with MS-DOS.
+I am a newcomer to the 6809 Processor (40 years, but hey, who's counting?), and I am given to understand this is the original Motorola Assembler which was originally written for use with MS-DOS.
 
 The changes to the code are simply function declarations to allow a modern compiler to build the package.  It compiles under MacOS, FreeBSD and CentOS Linux.  It should also compile under Windows with changes to the Makefile.
 
