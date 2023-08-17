@@ -18,6 +18,8 @@ symtab.c        \
 util.c          \
 #
 
+all: as9.tgz as9.zip
+
 # This is peculiar, as9 only includes other files.
 # The main program sits in as.c
 as9 : $(SRCC) $(SRCH) ; gcc -g $< -o $@
@@ -48,3 +50,7 @@ testforth9 :  as9
 	diff -b -B forth9.s19 results/forth9.s19
 
 test : testrom testassist09 testforth9
+
+clean:
+	rm as9
+
