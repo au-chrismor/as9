@@ -349,8 +349,10 @@ void do_gen(int op, int mode)
 void do_indexed(int op)
 {
         int     pbyte;
-        int     j,k;
-        int     predec,pstinc;
+        int     j;
+        int     k;
+        int     predec;
+        int     pstinc;
 
         Cycles += 2;    /* indexed is always 2+ base cycle count */
         predec=0;

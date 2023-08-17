@@ -38,7 +38,8 @@
  */
 int eval(void)
 {
-        int     left,right;     /* left and right terms for expression */
+        int     left;           /* left and right terms for expression */
+        int     right;
         char    o;              /* operator character */
 
 #ifdef DEBUG
@@ -76,7 +77,7 @@ int eval(void)
         printf("Result=%x\n",Result);
         printf("Force_byte=%d  Force_word=%d\n",Force_byte,Force_word);
 #endif
-        return(YES);
+        return YES;
 }
 
 /*
@@ -85,8 +86,8 @@ int eval(void)
 int is_op(char c)
 {
         if( any(c,"+-*/&%|^"))
-                return(YES);
-        return(NO);
+                return YES;
+        return NO;
 }
 
 
