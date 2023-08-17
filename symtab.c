@@ -3,65 +3,68 @@
  */
 int install(char *str, int val)
 {
-        struct link *lp;
-        struct nlist *np,*p,*backp;
-        struct nlist *lookup();
-        int     i;
+    struct link *lp;
+    struct nlist *np;
+    struct nlist *p
+    struct nlist *backp;
+    struct nlist;
+    struct nlist *lookup();
+    int i;
 
-        if( !alpha(*str) ){
-                error("Illegal Symbol Name");
-                return(NO);
-                }
-        if( (np = lookup(str)) != NULL ){
-                if( Pass==2 ){
-                        if( np->def == val )
-                                return(YES);
-                        else{
-                                error("Phasing Error");
-                                return(NO);
-                                }
-                        }
-                error("Symbol Redefined");
-                return(NO);
-                }
-        /* enter new symbol */
-#ifdef DEBUG
-        printf("Installing %s as %d\n",str,val);
-#endif
-        np = (struct nlist *) alloc(sizeof(struct nlist));
-        if( np == (struct nlist *)ERR ){
-                error("Symbol table full");
-                return(NO);
-                }
-        np->name = alloc(strlen(str)+1);
-        if( np->name == (char *)ERR ){
-                error("Symbol table full");
-                return(NO);
-                }
-        strcpy(np->name,str);
-        np->def = val;
-        np->Lnext = NULL;
-        np->Rnext = NULL;
-           lp = (struct link *) alloc(sizeof(struct link));
-           np->L_list = lp;
-           lp->L_num = Line_num;
-           lp->next = NULL;
-        p = root;
-          backp = NULL;
-           while (p != NULL)
-            {
-              backp = p;
-              i = strcmp (str,p->name);
-               if (i<0)
-                   p=p->Lnext;
-                  else p=p->Rnext;
+    if( !alpha(*str) ){
+            error("Illegal Symbol Name");
+            return NO;
             }
-          if (backp == NULL)
-              root = np;
-             else if (strcmp(str,backp->name)<0)
-                  backp->Lnext = np;
-                 else backp->Rnext = np;
-          return (YES);
+    if( (np = lookup(str)) != NULL ){
+            if( Pass==2 ){
+                    if( np->def == val )
+                            return YES;
+                    else{
+                            error("Phasing Error");
+                            return NO;
+                            }
+                    }
+            error("Symbol Redefined");
+            return NO;
+            }
+    /* enter new symbol */
+#ifdef DEBUG
+    printf("Installing %s as %d\n",str,val);
+#endif
+    np = (struct nlist *) alloc(sizeof(struct nlist));
+    if( np == (struct nlist *)ERR ){
+            error("Symbol table full");
+            return NO;
+            }
+    np->name = alloc(strlen(str)+1);
+    if( np->name == (char *)ERR ){
+            error("Symbol table full");
+            return NO;
+            }
+    strcpy(np->name,str);
+    np->def = val;
+    np->Lnext = NULL;
+    np->Rnext = NULL;
+       lp = (struct link *) alloc(sizeof(struct link));
+       np->L_list = lp;
+       lp->L_num = Line_num;
+       lp->next = NULL;
+    p = root;
+      backp = NULL;
+       while (p != NULL)
+        {
+          backp = p;
+          i = strcmp (str,p->name);
+           if (i<0)
+               p=p->Lnext;
+              else p=p->Rnext;
+        }
+      if (backp == NULL)
+          root = np;
+         else if (strcmp(str,backp->name)<0)
+              backp->Lnext = np;
+             else backp->Rnext = np;
+      return (YES);
 }
 
 /*
@@ -115,7 +118,7 @@ struct oper *mne_look(char *str)
                 else if (cond > 0)
                         low = mid + 1;
                 else
-                        return(mid);
+                        return mid;
         }
 
         /* Check for pseudo ops */
@@ -128,8 +131,8 @@ struct oper *mne_look(char *str)
                 else if (cond > 0)
                         low = mid + 1;
                 else
-                        return(mid);
+                        return mid;
         }
 
-        return(NULL);
+        return NULL;
 }

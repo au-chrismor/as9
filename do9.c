@@ -569,16 +569,16 @@ int set_mode(void)
  */
 int regnum(void)
 {
-        if( head(Optr,"D" ))return(RD);
-        if( head(Optr,"X" ))return(RX);
-        if( head(Optr,"Y" ))return(RY);
-        if( head(Optr,"U" ))return(RU);
-        if( head(Optr,"S" ))return(RS);
-        if( head(Optr,"PC" ))return(RPC);
-        if( head(Optr,"PCR" ))return(RPCR);
-        if( head(Optr,"A" ))return(RA);
-        if( head(Optr,"B" ))return(RB);
-        if( head(Optr,"CC" ))return(RCC);
-        if( head(Optr,"DP" ))return(RDP);
+        if( head(Optr,"D" ))return RD;
+        if( head(Optr,"X" ))return RX;
+        if( head(Optr,"Y" ))return RY;
+        if( head(Optr,"U" ))return RU;
+        if( head(Optr,"S" ))return RS;
+        if( head(Optr,"PC" ))return RPC;
+        if( head(Optr,"PCR" ))return RPCR;
+        if( head(Optr,"A" ))return RA;
+        if( head(Optr,"B" ))return RB;
+        if( head(Optr,"CC" ))return RCC;
+        if( head(Optr,"DP" ))return RDP;
         return ERR;
 }

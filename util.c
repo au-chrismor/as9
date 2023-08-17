@@ -55,8 +55,8 @@ void warn(char *str)
 int delim(char c)
 {
         if( any(c," :;\t\n") || EOS==c )
-                return(YES);
-        return(NO);
+                return YES;
+        return NO;
 }
 
 /*
@@ -66,7 +66,7 @@ char *skip_white(char *ptr)
 {
         while( any(*ptr," \n\t\r") )
                 ptr++;
-        return(ptr);
+        return ptr;
 }
 
 /*
@@ -88,7 +88,7 @@ int emit(char byte)
 #endif
         if(Pass==1){
                 Pc++;
-                return(YES);
+                return YES;
                 }
         if(P_total < P_LIMIT)
                 P_bytes[P_total++] = byte;
@@ -202,8 +202,8 @@ int any(char c,char *str)
 {
         while(*str != EOS)
                 if(*str++ == c)
-                        return(YES);
-        return(NO);
+                        return YES;
+        return NO;
 }
 
 /*
@@ -212,8 +212,8 @@ int any(char c,char *str)
 char mapdn(char c)
 {
         if( c >= 'A' && c <= 'Z')
-                return(c+040);
-        return(c);
+                return c+040;
+        return c;
 }
 
 /*
@@ -221,14 +221,14 @@ char mapdn(char c)
  */
 int lobyte(int i)
 {
-        return(i&0xFF);
+        return i&0xFF;
 }
 /*
  *      hibyte --- return high byte of an int
  */
 int hibyte(int i)
 {
-        return((i>>8)&0xFF);
+        return (i>>8)&0xFF;
 }
 
 /*
@@ -246,21 +246,21 @@ int head( char *str1, char *str2 )
  */
 int alpha(char c)
 {
-        if( c<= 'z' && c>= 'a' )return(YES);
-        if( c<= 'Z' && c>= 'A' )return(YES);
-        if( c== '_' )return(YES);
-        if( c== '.' )return(YES);
-        return(NO);
+        if( c<= 'z' && c>= 'a' )return YES;
+        if( c<= 'Z' && c>= 'A' )return YES;
+        if( c== '_' )return YES;
+        if( c== '.' )return YES;
+        return NO;
 }
 /*
  *      alphan --- is character a legal letter or digit
  */
 int alphan(char c)
 {
-        if( alpha(c) )return(YES);
-        if( c<= '9' && c>= '0' )return(YES);
-        if( c == '$' )return(YES);      /* allow imbedded $ */
-        return(NO);
+        if( alpha(c) )return YES;
+        if( c<= '9' && c>= '0' )return YES;
+        if( c == '$' )return YES;      /* allow imbedded $ */
+        return NO;
 }
 
 /*
@@ -276,5 +276,5 @@ char white(char c)
  */
 char *alloc(int nbytes)
 {
-        return(malloc(nbytes));
+        return malloc(nbytes);
 }
