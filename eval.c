@@ -100,8 +100,10 @@ int get_term(void)
         char    *tmp;
         int     val = 0;        /* local value being built */
         int     minus;          /* unary minus flag */
-        struct nlist *lookup(),*pointer;
-        struct link *pnt,*bpnt;
+        struct nlist *lookup();
+        struct nlist *pointer;
+        struct link *pnt;
+        struct link *bpnt;
 
         if( *Optr == '-' ){
                 Optr++;

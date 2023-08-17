@@ -105,7 +105,9 @@ struct nlist *lookup(char *name)
  */
 struct oper *mne_look(char *str)
 {
-        struct oper *low,*high,*mid;
+        struct oper *low;
+        struct oper **high;
+        struct oper **mid;
         int     cond;
 
         /* Search machine mnemonics first */
