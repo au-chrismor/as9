@@ -145,8 +145,6 @@ char    *hexstr = { "0123456789ABCDEF" } ;
 
 void hexout(int byte)
 {
-        char hi,lo;
-
         byte = lobyte(byte);
         fprintf(Objfil,"%c%c",hexstr[byte>>4],hexstr[byte&017]);
 }

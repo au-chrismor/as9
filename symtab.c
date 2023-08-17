@@ -64,7 +64,7 @@ int install(char *str, int val)
          else if (strcmp(str,backp->name)<0)
               backp->Lnext = np;
              else backp->Rnext = np;
-      return (YES);
+      return YES;
 }
 
 /*
@@ -82,7 +82,7 @@ struct nlist *lookup(char *name)
              if (i == 0)
                {
                  Last_sym = np->def;
-                 return (np);
+                 return np;
                }
              else if (i < 0)
                  np = np->Lnext;

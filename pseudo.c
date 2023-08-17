@@ -41,7 +41,6 @@ struct oper pseudo[] = {
 void do_pseudo(int op) /* which op */
 {
         char    fccdelim;
-        int     j;
         int     fill;
         char    *skip_white();
 
