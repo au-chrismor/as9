@@ -48,7 +48,8 @@ void localinit(void)
 void do_op(int opcode, int class)
 {
         int     dist;   /* relative branch distance */
-        int     src,dst;/* source and destination registers */
+        int     src;    /* source and destination registers */
+        int     dst;
         int     pbyte;  /* postbyte value */
         int     amode;  /* indicated addressing mode */
         int     j;
