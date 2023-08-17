@@ -14,7 +14,6 @@ char *alloc(); */
 int main(int argc,char **argv)
 {
         char    **np;
-        char    *pc;
         FILE    *fopen();
         int     j = 0;
 
@@ -32,7 +31,7 @@ int main(int argc,char **argv)
           argv[j]++;
           while (j<argc)
              {
-             for (pc = argv[j]; *pc != 0; pc++)
+             for (char *pc = argv[j]; *pc != 0; pc++)
                *pc = tolower( (unsigned char)*pc );
 
              if (strcmp(argv[j],"l")==0)
