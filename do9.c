@@ -535,13 +535,13 @@ void abd_index(int pbyte)
 int rtype(int r)
 {
         switch(r){
-        case RX:        return(0x00);
-        case RY:        return(0x20);
-        case RU:        return(0x40);
-        case RS:        return(0x60);
+        case RX:        return 0x00;
+        case RY:        return 0x20;
+        case RU:        return 0x40;
+        case RS:        return 0x60;
                 }
         error("Illegal Register for Indexed");
-        return(0);
+        return 0;
 }
 
 /*
@@ -552,16 +552,16 @@ int set_mode(void)
         register char *p;
 
         if( *Operand == '#' )
-                return(IMMED);          /* immediate addressing */
+                return IMMED;          /* immediate addressing */
         p = Operand;
         while( *p != EOS && *p != BLANK && *p != TAB){/* any , before break */
                 if( *p == ',')
-                        return(IND);    /* indexed addressing */
+                        return IND;    /* indexed addressing */
                 p++;
                 }
         if( *Operand == '[')
-                return(INDIR);          /* indirect addressing */
-        return(OTHER);                  /* NOTA */
+                return INDIR;          /* indirect addressing */
+        return OTHER;                  /* NOTA */
 }
 
 /*
@@ -580,5 +580,5 @@ int regnum(void)
         if( head(Optr,"B" ))return(RB);
         if( head(Optr,"CC" ))return(RCC);
         if( head(Optr,"DP" ))return(RDP);
-        return(ERR);
+        return ERR;
 }

@@ -221,7 +221,7 @@ int parse_line(void)
 
         if( *pcfrm == '*' || *pcfrm == '\n' ||
             *pcfrm == ';' )
-                return(0);      /* a comment line */
+                return 0;      /* a comment line */
         /***************************/
         pcto = Label;
         while( delim(*pcfrm)== NO )   *pcto++ = *pcfrm++;
@@ -251,7 +251,7 @@ int parse_line(void)
         printf("Op----%s-\n",Op);
         printf("Operand-%s-\n",Operand);
 #endif
-        return(1);
+        return 1;
 }
 
 /*
