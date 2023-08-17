@@ -2,8 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include "asdefs.h"
-/* char mapdn();
-char *alloc(); */
+
 /*
  *      as ---  cross assembler main program
  *      This requries a very peculiar set of arguments:
